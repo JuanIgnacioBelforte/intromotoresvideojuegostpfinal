@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqju7he4mmeow"]
+[gd_scene load_steps=3 format=3 uid="uid://cqju7he4mmeow"]
 
 [ext_resource type="Script" uid="uid://bpo3d2fr0njfn" path="res://scripts/menu.gd" id="1_lnt83"]
+[ext_resource type="Texture2D" uid="uid://min1yqvn1w3t" path="res://Catacumbas.jpg" id="2_p25xy"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -15,6 +16,7 @@ script = ExtResource("1_lnt83")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("2_p25xy")
 
 [node name="Buttons" type="VBoxContainer" parent="."]
 layout_mode = 0
