@@ -104,7 +104,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_va1v7"]
 size = Vector2(26, 19)
 
-[node name="Slime" type="CharacterBody2D" groups=["enemies"]]
+[node name="Slime" type="CharacterBody2D"]
 script = ExtResource("1_2jj8s")
 speed = null
 jump_height = null
