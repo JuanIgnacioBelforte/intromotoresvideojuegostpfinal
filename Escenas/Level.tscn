@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxj6v1qy2ikqr"]
+
+[ext_resource type="PackedScene" uid="uid://ljxkt2f1knkh" path="res://Escenas/Player.tscn" id="1_inmae"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Aventurero" parent="." instance=ExtResource("1_inmae")]

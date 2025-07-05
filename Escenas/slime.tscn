@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://ccd1u6k7efcfa"]
 
-[ext_resource type="Script" uid="uid://bhx84e51amrii" path="res://scripts/slime.gd" id="1_2jj8s"]
+[ext_resource type="Script" uid="uid://4pc7s8evxpey" path="res://scripts/slime.gd" id="1_2jj8s"]
 [ext_resource type="Texture2D" uid="uid://b7l21ixtrnx74" path="res://Animaciones/Slime (Animacion Idle).png" id="2_3p8qt"]
 [ext_resource type="Texture2D" uid="uid://orvqj48mv7g4" path="res://Animaciones/Slime (Animacion Saltar).png" id="3_w62i7"]
 
