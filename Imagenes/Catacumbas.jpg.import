@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://min1yqvn1w3t"
-path="res://.godot/imported/Catacumbas.jpg-527b9a66f8d373417eaad887fd690c05.ctex"
+uid="uid://dcfcfc0i2n88t"
+path="res://.godot/imported/Catacumbas.jpg-996b0ba4288c1a29cdcfe60dcb938f58.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Catacumbas.jpg"
-dest_files=["res://.godot/imported/Catacumbas.jpg-527b9a66f8d373417eaad887fd690c05.ctex"]
+source_file="res://Imagenes/Catacumbas.jpg"
+dest_files=["res://.godot/imported/Catacumbas.jpg-996b0ba4288c1a29cdcfe60dcb938f58.ctex"]
 
 [params]
 

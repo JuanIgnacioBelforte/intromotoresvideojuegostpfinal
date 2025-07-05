@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://ljxkt2f1knkh"]
+[gd_scene load_steps=39 format=3 uid="uid://ljxkt2f1knkh"]
 
 [ext_resource type="Script" uid="uid://bipmb4cwi5kj7" path="res://scripts/aventurero.gd" id="1_5hhfp"]
 [ext_resource type="Texture2D" uid="uid://yxrght8apssb" path="res://Animaciones/Aventurero (Pixel Art Idle).png" id="2_kwdw2"]
@@ -155,7 +155,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wqotv")
 }],
-"loop": true,
+"loop": false,
 "name": &"ataque",
 "speed": 12.0
 }, {
@@ -237,7 +237,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7uati")
 }],
-"loop": true,
+"loop": false,
 "name": &"saltar",
 "speed": 12.0
 }]
@@ -246,16 +246,32 @@ animations = [{
 radius = 6.0
 height = 35.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hhfp"]
+size = Vector2(20, 4)
+
 [node name="Aventurero" type="CharacterBody2D"]
+collision_mask = 31
+platform_floor_layers = 4294967044
+platform_wall_layers = 4
 script = ExtResource("1_5hhfp")
 
 [node name="Animaciones" type="AnimatedSprite2D" parent="."]
 position = Vector2(227, 95)
 sprite_frames = SubResource("SpriteFrames_t27sq")
 animation = &"saltar"
+autoplay = "Idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(228, 99)
 shape = SubResource("CapsuleShape2D_5hhfp")
 
-[connection signal="sprite_frames_changed" from="Animaciones" to="." method="_on_animaciones_sprite_frames_changed"]
+[node name="Hit Point" type="Area2D" parent="."]
+collision_mask = 2
+monitorable = false
+
+[node name="Collision" type="CollisionShape2D" parent="Hit Point"]
+position = Vector2(228, 119)
+shape = SubResource("RectangleShape2D_5hhfp")
+
+[connection signal="animation_finished" from="Animaciones" to="." method="_on_animaciones_animation_finished"]
+[connection signal="body_entered" from="Hit Point" to="." method="_on_hit_point_body_entered"]
