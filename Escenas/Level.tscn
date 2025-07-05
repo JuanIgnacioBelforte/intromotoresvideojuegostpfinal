@@ -6,6 +6,7 @@
 [node name="Level" type="Node2D"]
 
 [node name="Aventurero" parent="." instance=ExtResource("1_inmae")]
+position = Vector2(88, 79)
 
 [node name="Camara" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_qbrn0")]
 player = NodePath("../Aventurero")

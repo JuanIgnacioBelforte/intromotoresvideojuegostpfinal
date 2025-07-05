@@ -256,12 +256,12 @@ platform_wall_layers = 4
 script = ExtResource("1_5hhfp")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(99, 81.5)
+position = Vector2(0, -3.5)
 sprite_frames = SubResource("SpriteFrames_t27sq")
 animation = &"run"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(99, 85.5)
+position = Vector2(0, 0.5)
 shape = SubResource("CapsuleShape2D_5hhfp")
 
 [node name="Hit Point" type="Area2D" parent="."]
@@ -269,7 +269,7 @@ collision_mask = 2
 monitorable = false
 
 [node name="Collision" type="CollisionShape2D" parent="Hit Point"]
-position = Vector2(99, 105.5)
+position = Vector2(0, 20.5)
 shape = SubResource("RectangleShape2D_5hhfp")
 
 [connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]

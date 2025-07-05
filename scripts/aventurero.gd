@@ -1,11 +1,10 @@
 extends CharacterBody2D
 class_name Player
-
-
 # Variables
 
 var axis : Vector2 = Vector2.ZERO
 var death : bool = false
+var damage = 10
 
 @export_category("⚙️ Config")
 @export_group("Required References")
@@ -13,8 +12,8 @@ var death : bool = false
 
 @export_group("Motion")
 @export var speed = 200 # Velocidad de movimiento
-@export var jump = 368 # Salto
-@export var gravity = 800 # Gravedad
+@export var jump = 168 # Salto
+@export var gravity = 200 # Gravedad
 
 func _process(_delta):
 	match death:
@@ -67,7 +66,7 @@ func damage_ctrl() -> void:
 
 func _on_hit_point_body_entered(body: Node2D) -> void:
 	# Verifica si el cuerpo que entró en el Area2D es un enemigo
-	if body.is_in_group("Enemies") and velocity.y >= 0:
+	if body is Enemy and velocity.y >= 0:
 		$Audio/Hit.play()
 		body.damage_ctrl(1)
 		jump_ctrl(0.75)
