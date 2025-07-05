@@ -17,9 +17,6 @@ var death: bool = false
 
 # Señales
 
-@onready var animatedSprite = $AnimatedSprite # Referencia al nodo AnimatedSprite
-
-
 func _physics_process(delta):
 	# Movimiento horizontal
 	velocity.x = 0
@@ -55,8 +52,6 @@ func _on_hit_point_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemies"):
 		# Aplica daño al enemigo
 		body.take_damage(damage)
-
-
 
 func _on_animaciones_animation_finished() -> void:
 	pass # Replace with function body.

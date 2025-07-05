@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxj6v1qy2ikqr"]
+[gd_scene load_steps=3 format=3 uid="uid://cxj6v1qy2ikqr"]
 
 [ext_resource type="PackedScene" uid="uid://ljxkt2f1knkh" path="res://Escenas/Player.tscn" id="1_inmae"]
+[ext_resource type="PackedScene" uid="uid://6fd8plu8jnk0" path="res://Escenas/camara.tscn" id="2_qbrn0"]
 
 [node name="Level" type="Node2D"]
 
 [node name="Aventurero" parent="." instance=ExtResource("1_inmae")]
+
+[node name="Camara" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_qbrn0")]
+player = NodePath("../Aventurero")
