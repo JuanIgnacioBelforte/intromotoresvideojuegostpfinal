@@ -32,6 +32,10 @@ window/stretch/mode="viewport"
 
 project/assembly_name="IntroMotoresVideojuegosTPFinal"
 
+[global_group]
+
+enemies=""
+
 [input]
 
 ui_accept={

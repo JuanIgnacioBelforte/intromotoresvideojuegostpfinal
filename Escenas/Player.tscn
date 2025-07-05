@@ -255,11 +255,10 @@ platform_floor_layers = 4294967044
 platform_wall_layers = 4
 script = ExtResource("1_5hhfp")
 
-[node name="Animaciones" type="AnimatedSprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(99, 81.5)
 sprite_frames = SubResource("SpriteFrames_t27sq")
-animation = &"saltar"
-autoplay = "Idle"
+animation = &"run"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(99, 85.5)
@@ -273,5 +272,5 @@ monitorable = false
 position = Vector2(99, 105.5)
 shape = SubResource("RectangleShape2D_5hhfp")
 
-[connection signal="animation_finished" from="Animaciones" to="." method="_on_animaciones_animation_finished"]
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
 [connection signal="body_entered" from="Hit Point" to="." method="_on_hit_point_body_entered"]
