@@ -13,7 +13,7 @@ var damage = 10
 @export_group("Motion")
 @export var speed = 100 # Velocidad de movimiento
 @export var jump = 168 # Salto
-@export var gravity = 50 # Gravedad
+@export var gravity = 10 # Gravedad
 
 func _process(_delta):
 	match death:
@@ -58,7 +58,7 @@ func death_ctrl() -> void:
 
 func jump_ctrl(power : float) -> void:
 	velocity.y = -jump * power
-	$Audio/jump.play()
+	#$Audio/jump.play()
 
 func damage_ctrl() -> void:
 	death = true
@@ -67,7 +67,7 @@ func damage_ctrl() -> void:
 func _on_hit_point_body_entered(body: Node2D) -> void:
 	# Verifica si el cuerpo que entró en el Area2D es un enemigo
 	if body is Enemy and velocity.y >= 0:
-		$Audio/Hit.play()
+		#$Audio/Hit.play()
 		body.damage_ctrl(1)
 		jump_ctrl(0.75)
 
