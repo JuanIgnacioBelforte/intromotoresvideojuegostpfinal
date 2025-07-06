@@ -11,9 +11,9 @@ var damage = 10
 @export var gui: CanvasLayer
 
 @export_group("Motion")
-@export var speed = 200 # Velocidad de movimiento
+@export var speed = 100 # Velocidad de movimiento
 @export var jump = 168 # Salto
-@export var gravity = 200 # Gravedad
+@export var gravity = 50 # Gravedad
 
 func _process(_delta):
 	match death:

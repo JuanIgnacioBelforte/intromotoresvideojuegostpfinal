@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d22kp0cfk743f"
-path="res://.godot/imported/Slime (Concept Art).png-97d06b4b54fd9d3d918268624aa834ff.ctex"
+uid="uid://bcs6skpdbh0sb"
+path="res://.godot/imported/Moneda 1.png-a6ab40564ecfa6b927508d5438bd957a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Animaciones/Slime (Concept Art).png"
-dest_files=["res://.godot/imported/Slime (Concept Art).png-97d06b4b54fd9d3d918268624aa834ff.ctex"]
+source_file="res://Imagenes/Moneda 1.png"
+dest_files=["res://.godot/imported/Moneda 1.png-a6ab40564ecfa6b927508d5438bd957a.ctex"]
 
 [params]
 

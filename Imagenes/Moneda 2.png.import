@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0gyibvcv83r1"
-path="res://.godot/imported/Catacumbas.jpg-996b0ba4288c1a29cdcfe60dcb938f58.ctex"
+uid="uid://usi1entmuekx"
+path="res://.godot/imported/Moneda 2.png-a9b79d96664ba0b519894739455c51f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagenes/Catacumbas.jpg"
-dest_files=["res://.godot/imported/Catacumbas.jpg-996b0ba4288c1a29cdcfe60dcb938f58.ctex"]
+source_file="res://Imagenes/Moneda 2.png"
+dest_files=["res://.godot/imported/Moneda 2.png-a9b79d96664ba0b519894739455c51f4.ctex"]
 
 [params]
 

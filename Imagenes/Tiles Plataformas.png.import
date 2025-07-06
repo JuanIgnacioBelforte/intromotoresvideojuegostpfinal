@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0gyibvcv83r1"
-path="res://.godot/imported/Catacumbas.jpg-996b0ba4288c1a29cdcfe60dcb938f58.ctex"
+uid="uid://bi5hmv07vlxtk"
+path="res://.godot/imported/Tiles Plataformas.png-bc22c7f9f58981940692988d04d76eda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagenes/Catacumbas.jpg"
-dest_files=["res://.godot/imported/Catacumbas.jpg-996b0ba4288c1a29cdcfe60dcb938f58.ctex"]
+source_file="res://Imagenes/Tiles Plataformas.png"
+dest_files=["res://.godot/imported/Tiles Plataformas.png-bc22c7f9f58981940692988d04d76eda.ctex"]
 
 [params]
 

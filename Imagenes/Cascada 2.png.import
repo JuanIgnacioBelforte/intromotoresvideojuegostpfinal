@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba4rq825o67ac"
-path="res://.godot/imported/Aventurero (Animaciones).png-aec9b21f5cd1915588552eb2aee39d70.ctex"
+uid="uid://bik27wtsfqn3k"
+path="res://.godot/imported/Cascada 2.png-65c620c1512cb7cecffaccd07ef3f6c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Animaciones/Aventurero (Animaciones).png"
-dest_files=["res://.godot/imported/Aventurero (Animaciones).png-aec9b21f5cd1915588552eb2aee39d70.ctex"]
+source_file="res://Imagenes/Cascada 2.png"
+dest_files=["res://.godot/imported/Cascada 2.png-65c620c1512cb7cecffaccd07ef3f6c5.ctex"]
 
 [params]
 

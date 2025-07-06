@@ -1,0 +1,19 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://b7gqbvqp4udsf"]
+
+[ext_resource type="Texture2D" uid="uid://bi5hmv07vlxtk" path="res://Imagenes/Tiles Plataformas.png" id="1_nbvt8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_418oe"]
+texture = ExtResource("1_nbvt8")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+
+[resource]
+sources/6 = SubResource("TileSetAtlasSource_418oe")
