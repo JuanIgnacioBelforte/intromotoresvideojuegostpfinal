@@ -43,7 +43,7 @@ physics_layer_0/physics_material = SubResource("PhysicsMaterial_418oe")
 sources/6 = SubResource("TileSetAtlasSource_418oe")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hc14g"]
-size = Vector2(1529, 248)
+size = Vector2(1463, 248)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_hc14g")
@@ -106,10 +106,11 @@ position = Vector2(426, 69)
 position = Vector2(576, 68)
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 318)
 script = ExtResource("10_kcfce")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(713.5, 468)
+position = Vector2(731.5, 124)
 shape = SubResource("RectangleShape2D_hc14g")
 
 [node name="Aventurero" parent="." instance=ExtResource("1_inmae")]
