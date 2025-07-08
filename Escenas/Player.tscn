@@ -1,11 +1,11 @@
 [gd_scene load_steps=46 format=3 uid="uid://ljxkt2f1knkh"]
 
 [ext_resource type="Script" uid="uid://bluihaajdgwj7" path="res://scripts/Player.gd" id="1_5hhfp"]
-[ext_resource type="Texture2D" uid="uid://bhk8de8prujst" path="res://Animaciones/Aventurero (Animacion Death).png" id="2_j2dk4"]
-[ext_resource type="Texture2D" uid="uid://bo4ju6tmy0u8s" path="res://Animaciones/Aventurero (Pixel Art Idle).png" id="2_kwdw2"]
-[ext_resource type="Texture2D" uid="uid://cjl8o0gtn1753" path="res://Animaciones/Aventurero (Animacion Ataque).png" id="3_j2dk4"]
-[ext_resource type="Texture2D" uid="uid://ccj7fwtijtrls" path="res://Animaciones/Aventurero (Animacion Correr Spritesheet).png" id="4_urfe6"]
-[ext_resource type="Texture2D" uid="uid://b1da1psv40ghr" path="res://Animaciones/Aventurero (Animacion Saltar).png" id="5_mok4h"]
+[ext_resource type="Texture2D" uid="uid://bfslvix0s5liy" path="res://Animaciones/Aventurero (Animacion Death).png" id="2_j2dk4"]
+[ext_resource type="Texture2D" uid="uid://bslil8tnxbjmm" path="res://Animaciones/Aventurero (Pixel Art Idle).png" id="2_kwdw2"]
+[ext_resource type="Texture2D" uid="uid://c5twfpkmn12jf" path="res://Animaciones/Aventurero (Animacion Ataque).png" id="3_j2dk4"]
+[ext_resource type="Texture2D" uid="uid://cvgth7ikdj2r1" path="res://Animaciones/Aventurero (Animacion Correr Spritesheet).png" id="4_urfe6"]
+[ext_resource type="Texture2D" uid="uid://51hxl34mhdmv" path="res://Animaciones/Aventurero (Animacion Saltar).png" id="5_mok4h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_urfe6"]
 atlas = ExtResource("2_j2dk4")

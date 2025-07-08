@@ -26,8 +26,9 @@ func _input(event):
 	if not death and is_on_floor() and event.is_action_pressed("ui_accept"):
 		jump_ctrl(1)
 
+#Cambie de lugar  "ui_right" por "ui_left" para arreglar el movimiento
 func get_axis() -> Vector2:
-	axis.x = int(Input.is_action_pressed("ui_left")) - int(Input.is_action_pressed("ui_right"))
+	axis.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
 	return axis.normalized()
 
 func motion_ctrl() -> void:
