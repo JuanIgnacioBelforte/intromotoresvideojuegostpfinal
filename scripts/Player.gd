@@ -72,5 +72,5 @@ func _on_hit_point_body_entered(body: Node2D) -> void:
 		jump_ctrl(0.75)
 
 func _on_sprite_animation_finished() -> void:
-	if $Sprite.animation == "Death" or ($Sprite.animation == "Fall" and position.y <= 320):
+	if $Sprite.animation == "Death":
 		gui.game_over()
