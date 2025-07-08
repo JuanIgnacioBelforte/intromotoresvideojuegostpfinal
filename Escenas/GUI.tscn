@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://bby15kkd4lk23"]
+
+[ext_resource type="Script" uid="uid://blh3jrogyb7i7" path="res://scripts/gui.gd" id="1_8i2vt"]
+[ext_resource type="AudioStream" uid="uid://dqljrpbmeubkt" path="res://Audio/GameOver.mp3" id="2_87lpa"]
+
+[node name="GUI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_8i2vt")
+
+[node name="Container" type="MarginContainer" parent="."]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Container"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "SCORE: 0000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOver" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 0.823529)
+
+[node name="Container" type="VBoxContainer" parent="GameOver"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GameOver/Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "HAS 
+MUERTO"
+horizontal_alignment = 1
+
+[node name="BUTTONS" type="HBoxContainer" parent="GameOver/Container"]
+layout_mode = 2
+alignment = 1
+
+[node name="RESET" type="Button" parent="GameOver/Container/BUTTONS"]
+layout_mode = 2
+text = "REINICIAR"
+
+[node name="EXIT" type="Button" parent="GameOver/Container/BUTTONS"]
+layout_mode = 2
+text = "SALIR"
+
+[node name="Sound" type="AudioStreamPlayer" parent="GameOver"]
+stream = ExtResource("2_87lpa")
+
+[connection signal="pressed" from="GameOver/Container/BUTTONS/RESET" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="GameOver/Container/BUTTONS/EXIT" to="." method="_on_exit_pressed"]

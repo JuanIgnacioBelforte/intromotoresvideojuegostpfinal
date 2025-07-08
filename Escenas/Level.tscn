@@ -1,6 +1,8 @@
-[gd_scene load_steps=11 format=4 uid="uid://cxj6v1qy2ikqr"]
+[gd_scene load_steps=13 format=4 uid="uid://cxj6v1qy2ikqr"]
 
+[ext_resource type="Script" uid="uid://c0eputidrnpov" path="res://scripts/level.gd" id="1_hc14g"]
 [ext_resource type="PackedScene" uid="uid://ljxkt2f1knkh" path="res://Escenas/Player.tscn" id="1_inmae"]
+[ext_resource type="PackedScene" uid="uid://bby15kkd4lk23" path="res://Escenas/GUI.tscn" id="1_o7ik0"]
 [ext_resource type="PackedScene" uid="uid://6fd8plu8jnk0" path="res://Escenas/camara.tscn" id="2_qbrn0"]
 [ext_resource type="Texture2D" uid="uid://sp3owgp0gca1" path="res://Imagenes/Fondo.png" id="3_2qde4"]
 [ext_resource type="Texture2D" uid="uid://dyt2cc81r3wa8" path="res://Imagenes/Cascada 1.png" id="4_7l8dv"]
@@ -40,6 +42,9 @@ physics_layer_0/physics_material = SubResource("PhysicsMaterial_418oe")
 sources/6 = SubResource("TileSetAtlasSource_418oe")
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_hc14g")
+
+[node name="GUI" parent="." instance=ExtResource("1_o7ik0")]
 
 [node name="Aventurero" parent="." instance=ExtResource("1_inmae")]
 position = Vector2(80, 62)
@@ -51,7 +56,6 @@ player = NodePath("../Aventurero")
 [node name="Background" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer1" type="ParallaxLayer" parent="Background"]
-position = Vector2(-18, -89)
 motion_scale = Vector2(0.1, 0)
 motion_mirroring = Vector2(900, 0)
 

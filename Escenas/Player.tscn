@@ -1,6 +1,6 @@
 [gd_scene load_steps=39 format=3 uid="uid://ljxkt2f1knkh"]
 
-[ext_resource type="Script" uid="uid://bluihaajdgwj7" path="res://scripts/aventurero.gd" id="1_5hhfp"]
+[ext_resource type="Script" uid="uid://bluihaajdgwj7" path="res://scripts/Player.gd" id="1_5hhfp"]
 [ext_resource type="Texture2D" uid="uid://yxrght8apssb" path="res://Animaciones/Aventurero (Pixel Art Idle).png" id="2_kwdw2"]
 [ext_resource type="Texture2D" uid="uid://85h7qpnrrpbj" path="res://Animaciones/Aventurero (Animacion Ataque).png" id="3_j2dk4"]
 [ext_resource type="Texture2D" uid="uid://c5a1gyb6kgf4r" path="res://Animaciones/Aventurero (Animacion Correr Spritesheet).png" id="4_urfe6"]
@@ -259,6 +259,7 @@ script = ExtResource("1_5hhfp")
 position = Vector2(0, -3.5)
 sprite_frames = SubResource("SpriteFrames_t27sq")
 animation = &"run"
+autoplay = "Idle"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)

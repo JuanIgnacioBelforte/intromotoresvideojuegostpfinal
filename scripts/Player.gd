@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
-# Variables
 
+# Variables
 var axis : Vector2 = Vector2.ZERO
 var death : bool = false
 var damage = 10
@@ -47,9 +47,9 @@ func motion_ctrl() -> void:
 				$Sprite.set_animation("Idle")
 		false:
 			if velocity.y < 0:
-				$Sprite.set_animation("saltar")
+				$Sprite.set_animation("Jump")
 			else:
-				$Sprite.set_animation("Caer")
+				$Sprite.set_animation("Fall")
 
 func death_ctrl() -> void:
 	velocity.x = 0
