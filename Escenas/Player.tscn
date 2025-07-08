@@ -6,6 +6,54 @@
 [ext_resource type="Texture2D" uid="uid://c5a1gyb6kgf4r" path="res://Animaciones/Aventurero (Animacion Correr Spritesheet).png" id="4_urfe6"]
 [ext_resource type="Texture2D" uid="uid://c10rfdseqol4k" path="res://Animaciones/Aventurero (Animacion Saltar).png" id="5_mok4h"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_py4hh"]
+atlas = ExtResource("5_mok4h")
+region = Rect2(0, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mn3l4"]
+atlas = ExtResource("5_mok4h")
+region = Rect2(30, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30yp3"]
+atlas = ExtResource("5_mok4h")
+region = Rect2(60, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbx2r"]
+atlas = ExtResource("5_mok4h")
+region = Rect2(90, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d11ai"]
+atlas = ExtResource("5_mok4h")
+region = Rect2(120, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61aol"]
+atlas = ExtResource("5_mok4h")
+region = Rect2(150, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qu01u"]
+atlas = ExtResource("5_mok4h")
+region = Rect2(180, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jriq"]
+atlas = ExtResource("5_mok4h")
+region = Rect2(210, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glomq"]
+atlas = ExtResource("5_mok4h")
+region = Rect2(240, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82qo4"]
+atlas = ExtResource("5_mok4h")
+region = Rect2(270, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pulln"]
+atlas = ExtResource("5_mok4h")
+region = Rect2(300, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uati"]
+atlas = ExtResource("5_mok4h")
+region = Rect2(330, 0, 30, 55)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_aoscc"]
 atlas = ExtResource("3_j2dk4")
 region = Rect2(0, 0, 30, 55)
@@ -78,62 +126,60 @@ region = Rect2(300, 0, 30, 55)
 atlas = ExtResource("4_urfe6")
 region = Rect2(330, 0, 30, 55)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_py4hh"]
-atlas = ExtResource("5_mok4h")
-region = Rect2(0, 0, 30, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mn3l4"]
-atlas = ExtResource("5_mok4h")
-region = Rect2(30, 0, 30, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_30yp3"]
-atlas = ExtResource("5_mok4h")
-region = Rect2(60, 0, 30, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fbx2r"]
-atlas = ExtResource("5_mok4h")
-region = Rect2(90, 0, 30, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d11ai"]
-atlas = ExtResource("5_mok4h")
-region = Rect2(120, 0, 30, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_61aol"]
-atlas = ExtResource("5_mok4h")
-region = Rect2(150, 0, 30, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qu01u"]
-atlas = ExtResource("5_mok4h")
-region = Rect2(180, 0, 30, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4jriq"]
-atlas = ExtResource("5_mok4h")
-region = Rect2(210, 0, 30, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_glomq"]
-atlas = ExtResource("5_mok4h")
-region = Rect2(240, 0, 30, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_82qo4"]
-atlas = ExtResource("5_mok4h")
-region = Rect2(270, 0, 30, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pulln"]
-atlas = ExtResource("5_mok4h")
-region = Rect2(300, 0, 30, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7uati"]
-atlas = ExtResource("5_mok4h")
-region = Rect2(330, 0, 30, 55)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_t27sq"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"Fall",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_kwdw2")
 }],
 "loop": true,
 "name": &"Idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_py4hh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mn3l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30yp3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbx2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d11ai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61aol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qu01u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jriq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glomq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82qo4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pulln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uati")
+}],
+"loop": false,
+"name": &"Jump",
 "speed": 12.0
 }, {
 "frames": [{
@@ -199,47 +245,6 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_py4hh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mn3l4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_30yp3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fbx2r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d11ai")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_61aol")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qu01u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4jriq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_glomq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_82qo4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pulln")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7uati")
-}],
-"loop": false,
-"name": &"saltar",
-"speed": 12.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5hhfp"]
@@ -249,7 +254,7 @@ height = 35.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5hhfp"]
 size = Vector2(20, 4)
 
-[node name="Aventurero" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 collision_mask = 31
 platform_floor_layers = 4294967044
 platform_wall_layers = 4
@@ -258,7 +263,7 @@ script = ExtResource("1_5hhfp")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -3.5)
 sprite_frames = SubResource("SpriteFrames_t27sq")
-animation = &"run"
+animation = &"Fall"
 autoplay = "Idle"
 
 [node name="Collision" type="CollisionShape2D" parent="."]

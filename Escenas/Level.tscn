@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cxj6v1qy2ikqr"]
+[gd_scene load_steps=15 format=4 uid="uid://cxj6v1qy2ikqr"]
 
 [ext_resource type="Script" uid="uid://c0eputidrnpov" path="res://scripts/level.gd" id="1_hc14g"]
 [ext_resource type="PackedScene" uid="uid://ljxkt2f1knkh" path="res://Escenas/Player.tscn" id="1_inmae"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bik27wtsfqn3k" path="res://Imagenes/Cascada 2.png" id="5_418oe"]
 [ext_resource type="Texture2D" uid="uid://bi5hmv07vlxtk" path="res://Imagenes/Tiles Plataformas.png" id="6_7l8dv"]
 [ext_resource type="PackedScene" uid="uid://ccd1u6k7efcfa" path="res://Escenas/slime.tscn" id="7_418oe"]
+[ext_resource type="Script" uid="uid://qqwjlnbf7lad" path="res://scripts/caida.gd" id="10_kcfce"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_418oe"]
 
@@ -41,13 +42,13 @@ physics_layer_0/collision_mask = 7
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_418oe")
 sources/6 = SubResource("TileSetAtlasSource_418oe")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hc14g"]
+size = Vector2(1529, 248)
+
 [node name="Level" type="Node2D"]
 script = ExtResource("1_hc14g")
 
 [node name="GUI" parent="." instance=ExtResource("1_o7ik0")]
-
-[node name="Aventurero" parent="." instance=ExtResource("1_inmae")]
-position = Vector2(80, 62)
 
 [node name="Camara" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_qbrn0")]
 position = Vector2(0, 0)
@@ -57,10 +58,10 @@ player = NodePath("../Aventurero")
 
 [node name="ParallaxLayer1" type="ParallaxLayer" parent="Background"]
 motion_scale = Vector2(0.1, 0)
-motion_mirroring = Vector2(900, 0)
+motion_mirroring = Vector2(725, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxLayer1"]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.245667, 0.252)
 texture = ExtResource("3_2qde4")
 centered = false
 
@@ -89,7 +90,7 @@ centered = false
 [node name="Environment" type="TileMapLayer" parent="."]
 light_mask = 31
 visibility_layer = 31
-tile_map_data = PackedByteArray("AAADAAYABgAAAAAAAAAEAAYABgABAAAAAAAFAAYABgACAAAAAAAGAAYABgADAAAAAAAOAAUABgAAAAAAAAAPAAUABgABAAAAAAAQAAUABgACAAAAAAARAAUABgADAAAAAAAZAAUABgAAAAAAAAAaAAUABgABAAAAAAAbAAUABgACAAAAAAAcAAUABgADAAAAAAAiAAUABgAAAAAAAAAjAAUABgABAAAAAAAkAAUABgACAAAAAAAlAAUABgADAAAAAAAfAAMABgAFAAAAAAAgAAMABgAGAAAAAAAJAAcABgAAAAIAAAAKAAcABgABAAIAAAALAAYABgAAAAIAAAAMAAYABgABAAIAAAAsAAUABgAAAAIAAAAtAAUABgABAAIAAAA1AAUABgAAAAAAAAA2AAUABgABAAAAAAA3AAUABgACAAAAAAA4AAUABgADAAAAAAAwAAQABgAAAAAAAAAxAAQABgABAAAAAAAyAAQABgACAAAAAAAzAAQABgADAAAAAAASAAYABgAAAAAAAAATAAYABgABAAAAAAAUAAYABgACAAAAAAAWAAYABgAAAAAAAAAXAAYABgABAAAAAAAYAAYABgACAAAAAAAdAAQABgAIAAAAAAAeAAQABgAIAAAAAAAnAAUABgAJAAAAAAAoAAUABgAJAAAAAAApAAUABgAJAAAAAAAuAAQABgAJAAAAAAA=")
+tile_map_data = PackedByteArray("AAADAAYABgAAAAAAAAAEAAYABgABAAAAAAAFAAYABgACAAAAAAAGAAYABgADAAAAAAAQAAUABgACAAAAAAARAAUABgADAAAAAAAZAAUABgAAAAAAAAAaAAUABgABAAAAAAAbAAUABgACAAAAAAAcAAUABgADAAAAAAAiAAUABgAAAAAAAAAjAAUABgABAAAAAAAkAAUABgACAAAAAAAlAAUABgADAAAAAAAJAAcABgAAAAIAAAAKAAcABgABAAIAAAALAAYABgAAAAIAAAAMAAYABgABAAIAAAAsAAUABgAAAAIAAAAtAAUABgABAAIAAAA1AAUABgAAAAAAAAA2AAUABgABAAAAAAA3AAUABgACAAAAAAA4AAUABgAAAAAAAAAwAAQABgACAAAAAAAxAAQABgAAAAAAAAAyAAQABgABAAAAAAAzAAQABgACAAAAAAASAAYABgAAAAAAAAATAAYABgABAAAAAAAUAAYABgACAAAAAAAWAAYABgAAAAAAAAAXAAYABgABAAAAAAAYAAYABgACAAAAAAAdAAQABgAAAAAAAAAeAAQABgABAAAAAAAnAAUABgAJAAAAAAAoAAUABgAJAAAAAAApAAUABgAJAAAAAAAuAAQABgAAAAAAAAA5AAUABgABAAAAAAA6AAUABgACAAAAAAA7AAUABgAAAAAAAAA8AAUABgABAAAAAAA9AAUABgACAAAAAAA+AAUABgAAAAAAAAA/AAUABgABAAAAAABAAAUABgACAAAAAABBAAUABgADAAAAAAAvAAQABgABAAAAAAA0AAQABgADAAAAAAAfAAQABgACAAAAAAAgAAQABgADAAAAAAAPAAUABgABAAAAAAAOAAUABgAAAAAAAAA=")
 tile_set = SubResource("TileSet_o7ik0")
 occlusion_enabled = false
 
@@ -103,3 +104,15 @@ position = Vector2(426, 69)
 
 [node name="Slime3" parent="Enemies" instance=ExtResource("7_418oe")]
 position = Vector2(576, 68)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("10_kcfce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(713.5, 468)
+shape = SubResource("RectangleShape2D_hc14g")
+
+[node name="Aventurero" parent="." instance=ExtResource("1_inmae")]
+position = Vector2(80, 62)
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
