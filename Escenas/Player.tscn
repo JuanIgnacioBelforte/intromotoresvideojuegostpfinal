@@ -1,10 +1,35 @@
-[gd_scene load_steps=39 format=3 uid="uid://ljxkt2f1knkh"]
+[gd_scene load_steps=46 format=3 uid="uid://ljxkt2f1knkh"]
 
 [ext_resource type="Script" uid="uid://bluihaajdgwj7" path="res://scripts/Player.gd" id="1_5hhfp"]
-[ext_resource type="Texture2D" uid="uid://yxrght8apssb" path="res://Animaciones/Aventurero (Pixel Art Idle).png" id="2_kwdw2"]
-[ext_resource type="Texture2D" uid="uid://85h7qpnrrpbj" path="res://Animaciones/Aventurero (Animacion Ataque).png" id="3_j2dk4"]
-[ext_resource type="Texture2D" uid="uid://c5a1gyb6kgf4r" path="res://Animaciones/Aventurero (Animacion Correr Spritesheet).png" id="4_urfe6"]
-[ext_resource type="Texture2D" uid="uid://c10rfdseqol4k" path="res://Animaciones/Aventurero (Animacion Saltar).png" id="5_mok4h"]
+[ext_resource type="Texture2D" uid="uid://bhk8de8prujst" path="res://Animaciones/Aventurero (Animacion Death).png" id="2_j2dk4"]
+[ext_resource type="Texture2D" uid="uid://bo4ju6tmy0u8s" path="res://Animaciones/Aventurero (Pixel Art Idle).png" id="2_kwdw2"]
+[ext_resource type="Texture2D" uid="uid://cjl8o0gtn1753" path="res://Animaciones/Aventurero (Animacion Ataque).png" id="3_j2dk4"]
+[ext_resource type="Texture2D" uid="uid://ccj7fwtijtrls" path="res://Animaciones/Aventurero (Animacion Correr Spritesheet).png" id="4_urfe6"]
+[ext_resource type="Texture2D" uid="uid://b1da1psv40ghr" path="res://Animaciones/Aventurero (Animacion Saltar).png" id="5_mok4h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urfe6"]
+atlas = ExtResource("2_j2dk4")
+region = Rect2(0, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mok4h"]
+atlas = ExtResource("2_j2dk4")
+region = Rect2(30, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t27sq"]
+atlas = ExtResource("2_j2dk4")
+region = Rect2(60, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tm5s"]
+atlas = ExtResource("2_j2dk4")
+region = Rect2(90, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qoh2p"]
+atlas = ExtResource("2_j2dk4")
+region = Rect2(120, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs42a"]
+atlas = ExtResource("2_j2dk4")
+region = Rect2(150, 0, 30, 55)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_py4hh"]
 atlas = ExtResource("5_mok4h")
@@ -128,6 +153,29 @@ region = Rect2(330, 0, 30, 55)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t27sq"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urfe6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mok4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t27sq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tm5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qoh2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gs42a")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
 "frames": [],
 "loop": true,
 "name": &"Fall",
@@ -263,7 +311,7 @@ script = ExtResource("1_5hhfp")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -3.5)
 sprite_frames = SubResource("SpriteFrames_t27sq")
-animation = &"Fall"
+animation = &"Death"
 autoplay = "Idle"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
