@@ -89,8 +89,7 @@ func damage_ctrl() -> void:
 
 func attack():
 	$Sprite.play("Attack")
-	can_attack = false # Lógica de ataque (ej: animaciones, detección de colisiones, daño)
-	# ... (Aquí debes implementar la lógica de tu ataque)
+	can_attack = false
 	print("Atacando!")
 	$AttackTimer.start()
 
