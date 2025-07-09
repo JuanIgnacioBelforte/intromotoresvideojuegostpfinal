@@ -7,6 +7,30 @@
 [ext_resource type="Texture2D" uid="uid://cvgth7ikdj2r1" path="res://Animaciones/Aventurero (Animacion Correr Spritesheet).png" id="4_urfe6"]
 [ext_resource type="Texture2D" uid="uid://51hxl34mhdmv" path="res://Animaciones/Aventurero (Animacion Saltar).png" id="5_mok4h"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_aoscc"]
+atlas = ExtResource("3_j2dk4")
+region = Rect2(0, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74bab"]
+atlas = ExtResource("3_j2dk4")
+region = Rect2(30, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3j75"]
+atlas = ExtResource("3_j2dk4")
+region = Rect2(60, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irylq"]
+atlas = ExtResource("3_j2dk4")
+region = Rect2(90, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_va84l"]
+atlas = ExtResource("3_j2dk4")
+region = Rect2(120, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqotv"]
+atlas = ExtResource("3_j2dk4")
+region = Rect2(150, 0, 30, 55)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_urfe6"]
 atlas = ExtResource("2_j2dk4")
 region = Rect2(0, 0, 30, 55)
@@ -79,30 +103,6 @@ region = Rect2(300, 0, 30, 55)
 atlas = ExtResource("5_mok4h")
 region = Rect2(330, 0, 30, 55)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_aoscc"]
-atlas = ExtResource("3_j2dk4")
-region = Rect2(0, 0, 30, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_74bab"]
-atlas = ExtResource("3_j2dk4")
-region = Rect2(30, 0, 30, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i3j75"]
-atlas = ExtResource("3_j2dk4")
-region = Rect2(60, 0, 30, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_irylq"]
-atlas = ExtResource("3_j2dk4")
-region = Rect2(90, 0, 30, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_va84l"]
-atlas = ExtResource("3_j2dk4")
-region = Rect2(120, 0, 30, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wqotv"]
-atlas = ExtResource("3_j2dk4")
-region = Rect2(150, 0, 30, 55)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_n77xa"]
 atlas = ExtResource("4_urfe6")
 region = Rect2(0, 0, 30, 55)
@@ -153,6 +153,29 @@ region = Rect2(330, 0, 30, 55)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t27sq"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aoscc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74bab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3j75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irylq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_va84l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqotv")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 12.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_urfe6")
@@ -232,29 +255,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_aoscc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_74bab")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i3j75")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_irylq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_va84l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wqotv")
-}],
-"loop": false,
-"name": &"ataque",
-"speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_n77xa")
 }, {
 "duration": 1.0,
@@ -311,20 +311,23 @@ script = ExtResource("1_5hhfp")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -3.5)
 sprite_frames = SubResource("SpriteFrames_t27sq")
-animation = &"Death"
+animation = &"Attack"
 autoplay = "Idle"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
 shape = SubResource("CapsuleShape2D_5hhfp")
 
-[node name="Hit Point" type="Area2D" parent="."]
+[node name="HitPoint" type="Area2D" parent="."]
 collision_mask = 2
 monitorable = false
 
-[node name="Collision" type="CollisionShape2D" parent="Hit Point"]
+[node name="AreaHit" type="CollisionShape2D" parent="HitPoint"]
 position = Vector2(0, 20.5)
 shape = SubResource("RectangleShape2D_5hhfp")
 
+[node name="AttackTimer" type="Timer" parent="."]
+
 [connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
-[connection signal="body_entered" from="Hit Point" to="." method="_on_hit_point_body_entered"]
+[connection signal="body_entered" from="HitPoint" to="." method="_on_hitpoint_body_entered"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]

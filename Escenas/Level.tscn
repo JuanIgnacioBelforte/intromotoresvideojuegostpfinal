@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bik27wtsfqn3k" path="res://Imagenes/Cascada 2.png" id="5_418oe"]
 [ext_resource type="Texture2D" uid="uid://bi5hmv07vlxtk" path="res://Imagenes/Tiles Plataformas.png" id="6_7l8dv"]
 [ext_resource type="PackedScene" uid="uid://ccd1u6k7efcfa" path="res://Escenas/slime.tscn" id="7_418oe"]
-[ext_resource type="Script" uid="uid://qqwjlnbf7lad" path="res://scripts/caida.gd" id="10_kcfce"]
+[ext_resource type="AudioStream" uid="uid://bnx6ch1hxnbyn" path="res://Audio/MusicaFondo.mp3" id="11_5vc8l"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_418oe"]
 
@@ -105,15 +105,17 @@ position = Vector2(426, 69)
 [node name="Slime3" parent="Enemies" instance=ExtResource("7_418oe")]
 position = Vector2(576, 68)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Caida" type="Area2D" parent="."]
 position = Vector2(0, 318)
-script = ExtResource("10_kcfce")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Caida"]
 position = Vector2(731.5, 124)
 shape = SubResource("RectangleShape2D_hc14g")
 
 [node name="Aventurero" parent="." instance=ExtResource("1_inmae")]
 position = Vector2(80, 62)
 
-[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_5vc8l")
+
+[connection signal="area_entered" from="Caida" to="." method="_on_area_entered"]

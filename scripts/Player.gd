@@ -4,7 +4,8 @@ class_name Player
 # Variables
 var axis : Vector2 = Vector2.ZERO
 var death : bool = false
-var damage = 10
+
+var can_attack = true
 
 @export_category("⚙️ Config")
 @export_group("Required References")
@@ -12,8 +13,11 @@ var damage = 10
 
 @export_group("Motion")
 @export var speed = 100 # Velocidad de movimiento
+@export var health = 100 # Velocidad de movimiento
 @export var jump = 168 # Salto
 @export var gravity = 10 # Gravedad
+@export var attack_damage = 10
+@export var attack_range = 50
 
 func _process(_delta):
 	match death:
@@ -28,7 +32,7 @@ func _input(event):
 
 #Cambie de lugar  "ui_right" por "ui_left" para arreglar el movimiento
 func get_axis() -> Vector2:
-	axis.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
+	axis.x = Input.get_axis("ui_left", "ui_right")
 	return axis.normalized()
 
 func motion_ctrl() -> void:
@@ -40,22 +44,40 @@ func motion_ctrl() -> void:
 	
 	move_and_slide()
 	
+	# Ataque
+	if Input.is_action_just_pressed("ui_attack") and can_attack:
+		attack()
+	
 	match is_on_floor():
 		true:
 			if not get_axis().x == 0:
-				$Sprite.set_animation("run")
+				$Sprite.play("run")
 			else:
-				$Sprite.set_animation("Idle")
+				$Sprite.play("Idle")
 		false:
 			if velocity.y < 0:
-				$Sprite.set_animation("Jump")
+				$Sprite.play("Jump")
 			else:
-				$Sprite.set_animation("Fall")
+				$Sprite.play("Fall")
 
 func death_ctrl() -> void:
 	velocity.x = 0
 	velocity.y += gravity
 	move_and_slide()
+	$Sprite.play("Death")
+
+func take_damage(damage: int):
+	health -= damage
+	print("Salud restante Jugador: ", health)
+	if health <= 0 and not death:
+		death = true
+		$Sprite.play("Death")
+		$Collision.set_deferred("disabled", true)
+		gravity = 0
+		_on_sprite_animation_finished()  # Llama a un método para manejar la muerte
+
+func die():
+	queue_free()  # Elimina el nodo del juego
 
 func jump_ctrl(power : float) -> void:
 	velocity.y = -jump * power
@@ -63,15 +85,26 @@ func jump_ctrl(power : float) -> void:
 
 func damage_ctrl() -> void:
 	death = true
-	$Sprite.set_animation("Death")
+	$Sprite.play("Death")
 
-func _on_hit_point_body_entered(body: Node2D) -> void:
+func attack():
+	$Sprite.play("Attack")
+	can_attack = false # Lógica de ataque (ej: animaciones, detección de colisiones, daño)
+	# ... (Aquí debes implementar la lógica de tu ataque)
+	print("Atacando!")
+	$AttackTimer.start()
+
+func _on_AttackTimer_timeout():
+	can_attack = true
+
+func _on_hitpoint_body_entered(body: Node2D) -> void:
 	# Verifica si el cuerpo que entró en el Area2D es un enemigo
 	if body is Enemy and velocity.y >= 0:
 		#$Audio/Hit.play()
-		body.damage_ctrl(1)
-		jump_ctrl(0.75)
+		body.take_damage(10)
+		jump_ctrl(0.5)
 
 func _on_sprite_animation_finished() -> void:
 	if $Sprite.animation == "Death":
+		die()
 		gui.game_over()

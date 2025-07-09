@@ -35,13 +35,13 @@ func _physics_process(delta):
 	if jump_timer <= 0:
 		jump()
 		jump_timer = randf_range(1.0, 3.0)
-
 	# Mover al enemigo
 	move_and_slide()
 
 # Función de salto
 func jump():
 	velocity.y = -jump_strength
+	$Sprite.play("Jump")
 	# Podés agregar animación o sonido aquí
 
 # Movimiento en estado de muerte
@@ -53,18 +53,28 @@ func death_ctrl():
 # Lógica de daño recibido
 func damage_ctrl(damage : int):
 	health -= damage
-
 	if health <= 0 and not death:
 		death = true
-		$Sprite.set_animation("Death")
+		$Sprite.play("Death")
 		$Collision.set_deferred("disabled", true)
 		gravity = 0
 		GLOBAL.score += score
+		print("Puntaje Obtenido: ", score)
+
+func take_damage(damage: int):
+	health -= damage
+	print("Salud restante Slime: ", health)
+	if health <= 0:
+		die()  # Llama a un método para manejar la muerte
+
+func die():
+	queue_free()  # Elimina el nodo del juego
 
 # Detección de colisión con el jugador
 func _on_hit_point_body_entered(body: Node2D):
 	if body is Player and velocity.y >= 0:
-		body.damage_ctrl()  # Asegurate de que el jugador tenga esta función
+		#$Audio/Hit.play()
+		body.take_damage(10)
 
 # Se llama cuando termina la animación de muerte
 func _on_sprite_animation_finished():
