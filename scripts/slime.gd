@@ -1,65 +1,72 @@
 extends CharacterBody2D
 class_name Enemy
 
-
-#Variables
-
+# ⚙️ CONFIGURACIONES EXPORTADAS DESDE EL EDITOR
 @export_category("⚙️ Config")
 
 @export_group("Options")
-@export var score = 100 # Velocidad de movimiento
-@export var health = 20 # Salud
+@export var score = 100           # Puntos al morir
+@export var health = 20           # Vida
 
 @export_group("Motion")
-#@export var speed = 100 # Velocidad de movimiento
-@export var salto = 168 # Salto
-@export var gravity = 10 # Gravedad
-@export var jump_strength = 500  # Fuerza de salto
+@export var salto = 168           # No usado (podés eliminar si no lo usás)
+@export var gravity = 10          # Gravedad
+@export var jump_strength = 500   # Fuerza del salto hacia arriba
 
+# ⚙️ VARIABLES INTERNAS
 var death : bool = false
-var jump_timer = 10  # Temporizador para controlar cuando saltar
+var jump_timer = 1.0              # Tiempo hasta el próximo salto
 
-func _process(_delta):
-	if health > 0:
-		jump_ctrl(2)
-	
-	# Actualizamos la IA para que salte después de cierto tiempo o cuando se cumpla una condición.
-	jump_timer -= _delta
-	
-	# La IA decide saltar cuando el temporizador llega a cero
+# Se ejecuta al iniciar la escena
+func _ready():
+	jump_timer = randf_range(1.0, 3.0)
+
+# Se ejecuta cada frame de física
+func _physics_process(delta):
+	if death:
+		death_ctrl()
+		return
+
+	# Aplicar gravedad
+	velocity.y += gravity
+
+	# Contador de salto aleatorio
+	jump_timer -= delta
 	if jump_timer <= 0:
 		jump()
-		jump_timer = randf_range(1.0, 3.0)  # Cambia el tiempo entre saltos, aleatorio entre 1 y 3 segundos
-	
+		jump_timer = randf_range(1.0, 3.0)
 
-func death_ctrl() -> void:
+	# Mover al enemigo
+	move_and_slide()
+
+# Función de salto
+func jump():
+	velocity.y = -jump_strength
+	# Podés agregar animación o sonido aquí
+
+# Movimiento en estado de muerte
+func death_ctrl():
 	velocity.x = 0
 	velocity.y += gravity
 	move_and_slide()
 
-func jump_ctrl(power : float) -> void:
-	velocity.y = -salto * power
-
-func damage_ctrl(damage : int) -> void:
+# Lógica de daño recibido
+func damage_ctrl(damage : int):
 	health -= damage
-	
-	if health <= 0:
+
+	if health <= 0 and not death:
+		death = true
 		$Sprite.set_animation("Death")
 		$Collision.set_deferred("disabled", true)
 		gravity = 0
 		GLOBAL.score += score
 
-# Función para hacer que el enemigo salte
-func jump():
-	# Añadimos la velocidad vertical para que el enemigo salte
-	velocity.y = jump_strength
-
-
-func _on_hit_point_body_entered(body: Node2D) -> void:
-	# Verifica si el cuerpo que entró en el Area2D es un enemigo
+# Detección de colisión con el jugador
+func _on_hit_point_body_entered(body: Node2D):
 	if body is Player and velocity.y >= 0:
-		body.damage_ctrl()
+		body.damage_ctrl()  # Asegurate de que el jugador tenga esta función
 
-func _on_sprite_animation_finished() -> void:
+# Se llama cuando termina la animación de muerte
+func _on_sprite_animation_finished():
 	if $Sprite.animation == "Death":
 		queue_free()
