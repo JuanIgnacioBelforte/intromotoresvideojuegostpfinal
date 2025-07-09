@@ -4,7 +4,6 @@ extends CanvasLayer
 func _process(_delta):
 	$Container/Label.text = "SCORE: " + str(GLOBAL.score)
 
-
 func game_over() -> void:
 	get_tree().paused = true
 	$GameOver/Container/BUTTONS/RESET.grab_focus()

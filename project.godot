@@ -34,6 +34,7 @@ project/assembly_name="IntroMotoresVideojuegosTPFinal"
 [global_group]
 
 enemies=""
+player=""
 
 [input]
 
@@ -61,6 +62,7 @@ restart={
 2d_render/layer_3="Environment"
 2d_render/layer_4="Object"
 2d_render/layer_5="Trap"
+2d_render/layer_6="Caida"
 2d_physics/layer_1="Player"
 2d_navigation/layer_1="Player"
 2d_physics/layer_2="Enemy"
@@ -71,6 +73,8 @@ restart={
 2d_navigation/layer_4="Object"
 2d_physics/layer_5="Trap"
 2d_navigation/layer_5="Trap"
+2d_physics/layer_6="Caida"
+2d_navigation/layer_6="Caida"
 
 [rendering]
 
