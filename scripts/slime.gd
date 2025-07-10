@@ -5,7 +5,8 @@ class_name Enemy
 @export_category("⚙️ Config")
 
 @export_group("Options")
-@export var score = 100           # Puntos al morir
+#@export var score = 100           # Puntos al morir
+@export var score = randf_range(80, 100)           # Puntos al morir
 @export var health = 20           # Vida
 
 @export_group("Motion")
@@ -60,12 +61,17 @@ func damage_ctrl(damage : int):
 		gravity = 0
 		GLOBAL.score += score
 		print("Puntaje Obtenido: ", score)
-
+		die()
+# randf_range(1.0, 3.0) score
 func take_damage(damage: int):
-	health -= damage
-	print("Salud restante Slime: ", health)
-	if health <= 0:
-		die()  # Llama a un método para manejar la muerte
+	print("Salud restante Slime: ", health - damage)
+	damage_ctrl(damage)
+
+#func take_damage(damage: int):
+#	health -= damage
+#	print("Salud restante Slime: ", health)
+#	if health <= 0:
+#		die()  # Llama a un método para manejar la muerte
 
 func die():
 	queue_free()  # Elimina el nodo del juego
