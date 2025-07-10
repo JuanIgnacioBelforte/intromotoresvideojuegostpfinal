@@ -81,7 +81,7 @@ func die():
 
 func jump_ctrl(power : float) -> void:
 	velocity.y = -jump * power
-	#$Audio/jump.play()
+	$Audio/Jump.play()
 
 func damage_ctrl() -> void:
 	death = true
@@ -99,7 +99,7 @@ func _on_AttackTimer_timeout():
 func _on_hitpoint_body_entered(body: Node2D) -> void:
 	# Verifica si el cuerpo que entró en el Area2D es un enemigo
 	if body is Enemy and velocity.y >= 0:
-		#$Audio/Hit.play()
+		$Audio/Hit.play()
 		body.take_damage(10)
 		jump_ctrl(0.5)
 
