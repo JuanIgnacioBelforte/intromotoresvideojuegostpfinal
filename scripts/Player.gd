@@ -13,7 +13,7 @@ var can_attack = true
 
 @export_group("Motion")
 @export var speed = 100 # Velocidad de movimiento
-@export var health = 100 # Velocidad de movimiento
+@export var health = 100 # Salud
 @export var jump = 168 # Salto
 @export var gravity = 10 # Gravedad
 @export var attack_damage = 10
