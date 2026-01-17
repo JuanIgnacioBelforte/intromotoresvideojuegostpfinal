@@ -1,10 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://6fd8plu8jnk0"]
 
-[ext_resource type="Script" uid="uid://bptj2f8bv8mn3" path="res://scripts/camara.gd" id="1_prkjd"]
+[ext_resource type="Script" uid="uid://c8ljw7jy067a6" path="res://scripts/camara.gd" id="1_prkjd"]
 
 [node name="Camara" type="Camera2D"]
 position = Vector2(160, 138)
-offset = Vector2(0, -48)
 position_smoothing_enabled = true
 drag_vertical_enabled = true
 drag_top_margin = 1.0

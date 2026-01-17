@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k2vh3qvh4sq5"
-path="res://.godot/imported/Moneda 1.png-a6ab40564ecfa6b927508d5438bd957a.ctex"
+uid="uid://rmuois8so60"
+path="res://.godot/imported/Aventurero (Animacion Correr).png-5a390c0ef96e93b055353ea45b5e31d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagenes/Moneda 1.png"
-dest_files=["res://.godot/imported/Moneda 1.png-a6ab40564ecfa6b927508d5438bd957a.ctex"]
+source_file="res://Animaciones/Aventurero (Animacion Correr).png"
+dest_files=["res://.godot/imported/Aventurero (Animacion Correr).png-5a390c0ef96e93b055353ea45b5e31d4.ctex"]
 
 [params]
 
