@@ -1,8 +1,8 @@
 [gd_scene load_steps=18 format=3 uid="uid://ccd1u6k7efcfa"]
 
-[ext_resource type="Script" uid="uid://4pc7s8evxpey" path="res://scripts/slime.gd" id="1_2jj8s"]
-[ext_resource type="Texture2D" uid="uid://cnalo7sqcdf1o" path="res://Animaciones/Slime (Animacion Idle).png" id="2_3p8qt"]
-[ext_resource type="Texture2D" uid="uid://dtq6gevau1dw0" path="res://Animaciones/Slime (Animacion Saltar).png" id="3_w62i7"]
+[ext_resource type="Script" uid="uid://dxs7m2o7qiwub" path="res://scripts/slime.gd" id="1_2jj8s"]
+[ext_resource type="Texture2D" uid="uid://cphbq7h2f2tgu" path="res://Animaciones/Slime (Animacion Idle).png" id="2_3p8qt"]
+[ext_resource type="Texture2D" uid="uid://cwqe8wbcy0453" path="res://Animaciones/Slime (Animacion Saltar).png" id="3_w62i7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_va1v7"]
 size = Vector2(26.25, 21.3125)
@@ -115,7 +115,6 @@ gravity = 7
 jump_strength = 150
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0.125, 0.3125)
 shape = SubResource("RectangleShape2D_va1v7")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]

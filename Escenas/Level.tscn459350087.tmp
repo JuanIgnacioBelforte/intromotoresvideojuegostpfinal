@@ -53,8 +53,6 @@ script = ExtResource("1_hc14g")
 
 [node name="Camara" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_qbrn0")]
 position = Vector2(0, 0)
-offset = Vector2(0, 0)
-zoom = Vector2(2, 2)
 player = NodePath("../Aventurero")
 
 [node name="Background" type="ParallaxBackground" parent="."]

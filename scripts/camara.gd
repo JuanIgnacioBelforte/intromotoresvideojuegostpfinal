@@ -1,5 +1,5 @@
 extends Camera2D
-class_name Camera
+class_name Camara
 
 @export_category("⚙️ Config")
 @export_group("Required References")

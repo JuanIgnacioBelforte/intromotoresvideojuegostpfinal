@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqju7he4mmeow"]
+[gd_scene load_steps=5 format=3 uid="uid://cqju7he4mmeow"]
 
-[ext_resource type="Script" uid="uid://2e03eaulve8b" path="res://scripts/menu.gd" id="1_lnt83"]
-[ext_resource type="Texture2D" uid="uid://c0gyibvcv83r1" path="res://Imagenes/Catacumbas.jpg" id="2_p25xy"]
+[ext_resource type="Script" uid="uid://dpoicvi6o0md7" path="res://scripts/menu.gd" id="1_lnt83"]
+[ext_resource type="Texture2D" uid="uid://dm0kjcsgu7vyc" path="res://Imagenes/Catacumbas.jpg" id="2_p25xy"]
+
+[sub_resource type="SystemFont" id="SystemFont_p25xy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_17m5t"]
+font = SubResource("SystemFont_p25xy")
+font_size = 72
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -24,18 +30,24 @@ expand_mode = 2
 
 [node name="Container" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 330.0
+offset_top = 217.0
+offset_right = 844.0
+offset_bottom = 316.0
 
 [node name="Label" type="Label" parent="Container"]
 layout_mode = 2
+text = "Adventure Boy"
+label_settings = SubResource("LabelSettings_17m5t")
+horizontal_alignment = 1
 
 [node name="Buttons" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 232.0
-offset_top = 104.0
-offset_right = 299.0
-offset_bottom = 170.0
+offset_left = 940.0
+offset_top = 440.0
+offset_right = 1007.0
+offset_bottom = 506.0
+scale = Vector2(3, 3)
 
 [node name="Start" type="Button" parent="Buttons"]
 layout_mode = 2
