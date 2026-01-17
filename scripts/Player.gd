@@ -3,7 +3,6 @@ class_name Player
 
 # Variables
 var death : bool = false
-
 var can_attack = true
 
 @export_category("⚙️ Config")
@@ -28,8 +27,6 @@ func _process(_delta):
 func _input(event):
 	if not death and is_on_floor() and event.is_action_pressed("ui_accept"):
 		jump_ctrl(1)
-
-#Cambie de lugar "ui_right" por "ui_left" para arreglar el movimiento
 
 func motion_ctrl() -> void:
 	velocity.x = GLOBAL.get_axis().x * speed
@@ -56,6 +53,8 @@ func death_ctrl() -> void:
 	velocity.y += gravity
 	move_and_slide()
 	$Sprite.play("Death")
+	$Collision.set_deferred("disabled", true)
+	gravity = 0
 
 func take_damage(damage: int):
 	health -= damage
@@ -63,8 +62,6 @@ func take_damage(damage: int):
 	if health <= 0 and not death:
 		death = true
 		death_ctrl()
-		$Collision.set_deferred("disabled", true)
-		gravity = 0
 		_on_sprite_animation_finished()  # Llama a un método para manejar la muerte
 
 func die():
@@ -74,10 +71,6 @@ func jump_ctrl(power : float) -> void:
 	if Input.is_action_pressed("ui_jump"):
 		velocity.y = -jump * power
 		$Audio/Jump.play()
-
-func damage_ctrl() -> void:
-	death = true
-	$Sprite.play("Death")
 
 func attack():
 	$Sprite.play("Attack")

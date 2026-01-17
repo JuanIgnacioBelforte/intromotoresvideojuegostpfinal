@@ -2,7 +2,6 @@ extends Camera2D
 class_name Camera
 
 @export_category("⚙️ Config")
-
 @export_group("Required References")
 @export var player: CharacterBody2D
 
