@@ -1,16 +1,16 @@
 [gd_scene load_steps=16 format=4 uid="uid://cxj6v1qy2ikqr"]
 
-[ext_resource type="Script" uid="uid://ks8taogxt5ue" path="res://scripts/level.gd" id="1_hc14g"]
+[ext_resource type="Script" uid="uid://c0eputidrnpov" path="res://scripts/level.gd" id="1_hc14g"]
 [ext_resource type="PackedScene" uid="uid://ljxkt2f1knkh" path="res://Escenas/Player.tscn" id="1_inmae"]
 [ext_resource type="PackedScene" uid="uid://bby15kkd4lk23" path="res://Escenas/GUI.tscn" id="1_o7ik0"]
 [ext_resource type="PackedScene" uid="uid://6fd8plu8jnk0" path="res://Escenas/camara.tscn" id="2_qbrn0"]
-[ext_resource type="Texture2D" uid="uid://cqya51ye0al2t" path="res://Imagenes/Fondo.png" id="3_2qde4"]
-[ext_resource type="Texture2D" uid="uid://bdx7k3wd7tpjb" path="res://Imagenes/Cascada 1.png" id="4_7l8dv"]
-[ext_resource type="Texture2D" uid="uid://d07y1g8ys7f5" path="res://Imagenes/Cascada 2.png" id="5_418oe"]
-[ext_resource type="Texture2D" uid="uid://bnm4b55j6toa8" path="res://Imagenes/Tiles Plataformas.png" id="6_7l8dv"]
+[ext_resource type="Texture2D" uid="uid://sp3owgp0gca1" path="res://Imagenes/Fondo.png" id="3_2qde4"]
+[ext_resource type="Texture2D" uid="uid://dyt2cc81r3wa8" path="res://Imagenes/Cascada 1.png" id="4_7l8dv"]
+[ext_resource type="Texture2D" uid="uid://bik27wtsfqn3k" path="res://Imagenes/Cascada 2.png" id="5_418oe"]
+[ext_resource type="Texture2D" uid="uid://bi5hmv07vlxtk" path="res://Imagenes/Tiles Plataformas.png" id="6_7l8dv"]
 [ext_resource type="PackedScene" uid="uid://ccd1u6k7efcfa" path="res://Escenas/slime.tscn" id="7_418oe"]
-[ext_resource type="Script" uid="uid://dq5rfluxobc64" path="res://scripts/caida.gd" id="9_5vc8l"]
-[ext_resource type="AudioStream" uid="uid://bpihdjttqhv07" path="res://Audio/MusicaFondo.mp3" id="11_5vc8l"]
+[ext_resource type="Script" uid="uid://7kdsnqkc4qtr" path="res://scripts/caida.gd" id="9_5vc8l"]
+[ext_resource type="AudioStream" uid="uid://bnx6ch1hxnbyn" path="res://Audio/MusicaFondo.mp3" id="11_5vc8l"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_418oe"]
 
@@ -53,7 +53,6 @@ script = ExtResource("1_hc14g")
 
 [node name="Camara" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_qbrn0")]
 position = Vector2(0, 0)
-zoom = Vector2(2, 2)
 player = NodePath("../Aventurero")
 
 [node name="Background" type="ParallaxBackground" parent="."]
