@@ -3,7 +3,6 @@ class_name Enemy
 
 # ⚙️ CONFIGURACIONES EXPORTADAS DESDE EL EDITOR
 @export_category("⚙️ Config")
-
 @export_group("Options")
 #@export var score = 100           # Puntos al morir
 @export var score = randf_range(80, 100)           # Puntos al morir

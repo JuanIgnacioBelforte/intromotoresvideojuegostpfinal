@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqju7he4mmeow"]
 
-[ext_resource type="Script" uid="uid://n1cj0yncxbor" path="res://scripts/menu.gd" id="1_lnt83"]
-[ext_resource type="Texture2D" uid="uid://dm0kjcsgu7vyc" path="res://Imagenes/Catacumbas.jpg" id="2_p25xy"]
+[ext_resource type="Script" uid="uid://2e03eaulve8b" path="res://scripts/menu.gd" id="1_lnt83"]
+[ext_resource type="Texture2D" uid="uid://c0gyibvcv83r1" path="res://Imagenes/Catacumbas.jpg" id="2_p25xy"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -32,11 +32,10 @@ layout_mode = 2
 
 [node name="Buttons" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 928.0
-offset_top = 425.0
-offset_right = 995.0
-offset_bottom = 491.0
-scale = Vector2(3.2, 3.2)
+offset_left = 232.0
+offset_top = 104.0
+offset_right = 299.0
+offset_bottom = 170.0
 
 [node name="Start" type="Button" parent="Buttons"]
 layout_mode = 2
